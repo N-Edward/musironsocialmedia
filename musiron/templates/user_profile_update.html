@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="profileupdate-cont">
+    <div>
+        <h3>update profile</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{user_update_form.as_p}}
+            <span><button type="submit">update</button></span>
+        </form>
+        <p><a href="{% url 'view-user-profile' %}">Back To Profile</a></p>
+    </div>
+</div>
+{% endblock content %}

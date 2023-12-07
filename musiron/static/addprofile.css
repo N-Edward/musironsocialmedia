@@ -1,0 +1,12 @@
+.addprofile-cont{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.addprofile-cont > div {
+    padding: 10px;
+    border-width: 0.05px;
+    border-style: solid;
+}

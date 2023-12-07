@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="commenting-cont">
+          <div class="commenting-cont-cont">
+            <div>
+                <h3>{{post.title}}</h3>
+                <img src="{{post.post_image.url}}"  />
+                <h3>comment</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <p class="bbutton"><button type="submit">comment</button></p>
+                </form>
+            </div>
+            <p><a href="{% url 'more-post-info' post.id%}">Back</a></p>
+          </div>
+    </div>
+{% endblock content %}

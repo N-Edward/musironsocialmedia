@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="fileupload-cont">
+    <div>
+      <h3>Upload a post</h3>
+      <p>{{user.username}}</p>
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{form.as_p}}
+          <span><button type="submit">Upload</button></span>
+      </form>
+      <p><a href="{% url 'home'%}">Home</a></p>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="profile-top-bar">
+    <h3>Musiron</h3>
+</div>
+
+<div class="profile-profile-img">
+    <img src="{{profile.profile_image.url}}"/>
+</div>
+<div class="profile-profile-docs">
+    <ul>
+        <li>username: {{request.user.username}}</li>
+        <li>nickname: @{{profile.nickname}}</li>
+        <li>location: {{profile.location}}</li>
+        <li>email:{{request.user.email}}</li>
+    </ul>
+    <ul>
+        <li>&#xf1ad;</li>
+        <li><a href="{% url 'home'%}">home</a></li>
+    </ul>
+    <ul>
+        <li>&#xf182; <span></span>&#xf183;</li>
+        <li><a href="{% url 'profile_update' profile.id %}">update profile</a></li>
+    </ul>
+</div>
+<div class="profile-profile-posts-container">
+    <div class="profile-profile-posts">
+        {% if posts %}
+            
+            {% for post in posts  %}
+                <div class="profile-profile-post-card">
+                    <img src="{{post.post_image.url}}"/>
+                    <p><span>{{post.title}}</span><br/><span>{{post.upload_date}}</span></p>
+                </div>
+            {% endfor %}
+                
+        {% else %}
+        <p>Haven't posted yet</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

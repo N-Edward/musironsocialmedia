@@ -1,0 +1,52 @@
+
+{% extends "base.html" %}
+
+
+
+{% block content %}
+    <div class="moreaboutpost-container">
+        <div class="moreabout-container">
+            <div class="moredetails-onpost">
+                <p><span>Title: {{more_post.title}}</span> | <span>{{more_post.upload_date}}</span></p>
+                <div><img src="{{more_post.post_image.url}}"/></div>
+                <p>{{more_post.description}}</p>
+                <p>
+                    <span>
+                        {% if request.user.is_authenticated %} 
+                           <a href="{% url 'comment' more_post.id  %}">Comment</a>                   
+                        {% endif %}
+                    </span>
+                    <span> </span>
+                    <span><a href="{% url 'home'%}">Home</a></span>
+                </p>
+            </div>
+            
+           <div class="moredetailscomments_cont"> 
+            {% if comments %}
+              
+                {% for coment in comments  %}
+                   <div class="moredetailscomments_cont-item">
+                    <div class="moredetailscommentsposter">
+                        {% for profile in profiles  %}
+                        {% if profile.user == coment.author %}
+                            <img src="{{profile.profile_image.url}}" />
+                            <p> @{{profile.nickname}}</p>
+                        {% endif %}
+                        {% endfor %}
+                       </div>
+                      <div class="moreabutpots-comments">    
+                        <p>{{coment.comment}}</p>
+                        <p><span>rate: {{coment.rate}}</span> <span>   </span> <span>{{coment.comment_date}}</span></p>
+                      </div>
+                   </div>
+                {% endfor %}
+              
+              
+            {% else %}
+            <p>no commets....</p>
+            {% endif %}
+          </div>
+        </div>
+    </div>
+{% endblock content %}
+    

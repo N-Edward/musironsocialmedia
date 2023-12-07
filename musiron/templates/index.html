@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="topbar">
+    <div class="appname">Musiron</div>
+    <div class="userauth">
+        {% if request.user.is_authenticated %}
+          <ul class="logged">
+            <img class="prof-image" src="{{prof.profile_image.url}}"/>
+            <li>{{request.user.username}}</li>
+            <li>@{{prof.nickname}}</li>
+            <li><a href="{% url 'user-file-upload'%}">upload-post</a></li>
+            <li><a href="{% url 'logout'%}">Logout</a></li>
+            <li><a href="{% url 'view-user-profile'%}">Profile</a></li>
+          </ul>
+        {%   else  %}
+        <p><a href="{% url 'login'%}">Login</a> || <a href="{% url 'signup'%}">Signup</a></p>
+        {% endif %}
+    </div>
+</div>
+<div class="empty-cont"></div>
+<div class="home-grid-layout">
+    {% for post in posts  %}
+        <div class="home-post-item-card">
+            
+                {% for profile in profiles %}
+                    {% if profile.user == post.author %}
+                      <p>
+                        <span><img class="homepostprofiepostser" src="{{profile.profile_image.url}}"/></span>
+                        {% for userr in users  %}
+                          {% if userr == post.author %}
+                            <span>{{userr.username}}</span>
+                          {% endif %}
+                        {% endfor %}
+                        <span>@{{profile.nickname}}</span>
+                      </p>
+                    {% endif %}
+                {% endfor %}
+        
+            <img src="{{post.post_image.url}}" />
+            <p>{{post.title}}</p>
+            <p><a href="{% url 'more-post-info' post.id %}">more</a></p>
+        </div>
+    {% endfor %}
+        
+</div>
+
+
+{% endblock content %}
