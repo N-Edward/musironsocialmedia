@@ -1,0 +1,65 @@
+.moreaboutpost-container{
+    display: flex;
+    justify-content: center;
+}
+.moreabout-container {
+    width:70%
+}
+
+.moredetails-onpost {
+    width: 100%;
+    background-color: rgb(22, 22, 77);
+    border-radius: 20px;
+    color: white;
+}
+.moredetails-onpost >p > span > a {
+    text-decoration: none;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color: white;
+    background-color: chocolate;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+.moredetails-onpost > p {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.moredetails-onpost > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.moredetails-onpost > div > img {
+    width: 200px;
+    height: 200px;
+}
+
+/*comments*/
+.moredetailscomments_cont {
+    padding: 10px;
+    background-color: darkslateblue;
+}
+.moredetailscomments_cont-item {
+    border-style: solid;
+    margin: 10px;
+    border-width: 0.05;
+    border-radius: 10px;
+    border-color: rgb(4, 4, 58);
+    background-color: rgb(24, 12, 82);
+    color: white;
+}
+.moredetailscommentsposter {
+    display: flex;
+    flex-direction: row;
+}
+.moredetailscommentsposter > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+.moreabutpots-comments {
+    justify-content: center;
+}
