@@ -1,0 +1,37 @@
+.profileupdate-cont {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.profileupdate-cont > div {
+    padding: 10px;
+    border-style: solid;
+    border-width: 0.05px;
+    background-color: antiquewhite;
+    
+}
+.profileupdate-cont > div > p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.profileupdate-cont > div > h3 {
+    width: 100%;
+    text-align: center;
+}
+.profileupdate-cont > div > form > span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.profileupdate-cont > div > p > a {
+    text-decoration: none;
+}
+.profileupdate-cont > div > form > span > button {
+    background-color: green;
+    width: 70px;
+    height: 20px;
+}
