@@ -20,6 +20,9 @@ import environ
 env = environ.Env()
 environ.Env.read_env()
 
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
