@@ -1,5 +1,6 @@
-{
-    "builds": [
+{ 
+  "version": 2,  
+  "builds": [
       {
         "src": "socialmedia/wsgi.py",
         "use": "@vercel/python",
