@@ -9,4 +9,26 @@
     padding: 10px;
     border-width: 0.05px;
     border-style: solid;
+    color: white;
+    background-color: rgb(6, 6, 70);
+    border-color: blue;
+}
+.addprofile-cont > div > form > button {
+    color: white;
+    background-color: green;
+    padding: 5px;
+}
+.addprofile-cont > div > form > p > input {
+    width: 100%;
+}
+.addprofile-cont > div > p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.addprofile-cont > div > p > a {
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
 }
