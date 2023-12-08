@@ -1,6 +1,6 @@
 /* profile bar*/
 .topbar {
-   height: 60px;
+   min-height: 60px;
    width: 100%;
    background-color: bisque;
    position: fixed;
@@ -59,6 +59,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;  
+    width: 100%;
 }
 
 .home-post-item-card {
@@ -95,4 +96,16 @@
     width: 90px;
     height: 30px;
     border-radius: 5px;
+}
+@media screen and (max-width: 768px){
+    .topbar > .userauth{
+        margin-top: 20px;
+    }
+    
+    .topbar{
+        height: 80px;
+    }
+    .home-post-item-card {
+        width: 400px;
+    }
 }
