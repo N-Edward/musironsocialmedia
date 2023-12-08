@@ -8,7 +8,7 @@
             <img class="prof-image" src="{{prof.profile_image.url}}"/>
             <li>{{request.user.username}}</li>
             <li>@{{prof.nickname}}</li>
-            <li><a href="{% url 'user-file-upload'%}">upload-post</a></li>
+            <li><a href="{% url 'user-file-upload'%}">Post</a></li>
             <li><a href="{% url 'logout'%}">Logout</a></li>
             <li><a href="{% url 'view-user-profile'%}">Profile</a></li>
           </ul>

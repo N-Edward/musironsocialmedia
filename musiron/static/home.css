@@ -32,7 +32,7 @@
     align-content: center;
 }
 .logged > li {
-    margin-left: 5px;
+    margin-left: 3px;
 }
 .logged > li > a {
     text-decoration: none;

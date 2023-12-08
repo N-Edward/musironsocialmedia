@@ -25,8 +25,10 @@ def index(request):
         }
         return render(request, 'index.html', context)
     else:
+        users = User.objects.all()
+        profiles = Profile.objects.all()
         posts = Post.objects.all().order_by('-upload_date')
-        return render(request, 'index.html', {'posts':posts})
+        return render(request, 'index.html', {'posts':posts,'users':users,'profiles':profiles})
         
 
 
