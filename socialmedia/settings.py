@@ -169,6 +169,7 @@ MEDIA_URL = '/media/'
 
 
 #configs for vercel to serve static files
+# path to static files storage
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'), 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
