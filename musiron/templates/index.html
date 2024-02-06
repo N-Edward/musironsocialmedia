@@ -20,7 +20,6 @@
 <div class="empty-cont"></div>
 <div class="home-grid-layout">
   
-  {% if posts %}
   {% for post in posts  %}
   <div class="home-post-item-card">
       
@@ -43,9 +42,6 @@
       <p><a href="{% url 'more-post-info' post.id %}">more</a></p>
   </div>
 {% endfor %}
-  {% elif  %}
-    <p> no posts yet </p>
-  {% endif %}
             
 </div>
 
