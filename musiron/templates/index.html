@@ -19,29 +19,34 @@
 </div>
 <div class="empty-cont"></div>
 <div class="home-grid-layout">
-    {% for post in posts  %}
-        <div class="home-post-item-card">
-            
-                {% for profile in profiles %}
-                    {% if profile.user == post.author %}
-                      <p>
-                        <span><img class="homepostprofiepostser" src="{{profile.profile_image.url}}"/></span>
-                        {% for userr in users  %}
-                          {% if userr == post.author %}
-                            <span>{{userr.username}}</span>
-                          {% endif %}
-                        {% endfor %}
-                        <span>@{{profile.nickname}}</span>
-                      </p>
+  
+  {% if posts %}
+  {% for post in posts  %}
+  <div class="home-post-item-card">
+      
+          {% for profile in profiles %}
+              {% if profile.user == post.author %}
+                <p>
+                  <span><img class="homepostprofiepostser" src="{{profile.profile_image.url}}"/></span>
+                  {% for userr in users  %}
+                    {% if userr == post.author %}
+                      <span>{{userr.username}}</span>
                     {% endif %}
-                {% endfor %}
-        
-            <img src="{{post.post_image.url}}" />
-            <p>{{post.title}}</p>
-            <p><a href="{% url 'more-post-info' post.id %}">more</a></p>
-        </div>
-    {% endfor %}
-        
+                  {% endfor %}
+                  <span>@{{profile.nickname}}</span>
+                </p>
+              {% endif %}
+          {% endfor %}
+  
+      <img src="{{post.post_image.url}}" />
+      <p>{{post.title}}</p>
+      <p><a href="{% url 'more-post-info' post.id %}">more</a></p>
+  </div>
+{% endfor %}
+  {% else %}
+    <p> no posts yet </p>
+  {% endif %}
+            
 </div>
 
 
